@@ -40,6 +40,8 @@ resource_files:
     path: node_red.py
   - file_type: file
     path: init_node_script.sh
+  - file_type: file
+    path: node.sh  
 author: houzzkit-team
 author_introduction_url: "https://www.houzzkit.com"
 create_time: "1713169037"
