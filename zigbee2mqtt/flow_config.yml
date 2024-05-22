@@ -20,7 +20,7 @@ steps:
       shell_parameters: [ "mqtt_service" ]
     next_step: step3
   step3:
-    step_type: create_file
+    step_type: copy_directory
     parameters:
-      file_path: '/tmp/configuration.yaml'
+      directory_path: '/tmp/configuration.yaml'
       write_to_path: '/var/data/zigbee2mqtt/data/configuration.yaml'
