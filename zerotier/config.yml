@@ -1,0 +1,44 @@
+name: ZeroTierOne
+version: 1.0.0
+bundle_id: com.zerotier.zerotier.zerotier
+app_info: ""
+hos_version: 2024.1.0
+config_version: 1.0.0
+docker_config:
+    image_name: zerotier/zerotier
+    tag: 1.14.0
+    container_name: zerotier
+    network_mode: host
+    icon: icon.png
+    web_ui_port: ""
+    ports: []
+    volumes:
+        - container: /var/lib/zerotier-one
+          host: /var/data/zerotier-one
+    env_variables:
+        - name: TZ
+          value: Asia/Shanghai
+    devices:
+        - host: /dev/net/tun
+          container: /dev/net/tun
+    command: []
+    privileged_mode: true
+    restart_policy: unless-stopped
+    resources_limit: false
+    entrypoint: /bin/sh
+    maximum_cpu_usage: "0"
+    memory_limit: ""
+    container_hostname: zerotier
+    cap_add: []
+hdp_update_info: ""
+init_config: flow_config.yml
+uninstall: ""
+resource_files:
+    - file_type: file
+      path: zerotier_join.sh
+author: houzzkit-team
+author_introduction_url: ""
+create_time: ""
+update_author: houzzkitteam
+update_author_introduction_url: ""
+hdp_create_time: 1716976700
