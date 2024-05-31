@@ -1,0 +1,28 @@
+version: 1.0.0
+step_pointer: "step1"
+steps:
+  step1:
+    step_type: form
+    title : 配置 Tailscale 客户端网络
+    form:
+      - type: input
+        key: auth_key
+        placeholder: ''
+        label: 填入Tailscale的身份验证密钥
+        action: form
+        mismatch_message: 请填入正确的身份验证密钥
+        check_regular: 'tskey-auth-[a-zA-Z0-9\-]+$'
+        required: true
+        disable: false
+    next_step : step2
+  step2:
+    step_type: start_container
+    next_step: step3
+  step3:
+    step_type: run_shell_script_in_container
+    parameters:
+      shell_path: tailscale_join.sh
+      run_path: '/'
+      shell_parameters: [ "auth_key" ]
+      shell_info: '加入 Tailscale 网络'
+    next_step: ''

@@ -1,0 +1,28 @@
+version: 1.0.0
+step_pointer: "step1"
+steps:
+  step1:
+    step_type: form
+    title : 配置 ZeroTier 客户端网络
+    form:
+      - type: input
+        key: network_id
+        placeholder: ''
+        label: 填入ZeroTier的网络ID
+        action: form
+        mismatch_message: 请填入正确网络ID
+        check_regular: '^[A-Za-z0-9]{16}$'
+        required: true
+        disable: false
+    next_step : step2
+  step2:
+    step_type: start_container
+    next_step: step3
+  step3:
+    step_type: run_shell_script_in_container
+    parameters:
+      shell_path: zerotier_join.sh
+      run_path: '/'
+      shell_parameters: [ "network_id" ]
+      shell_info: '加入 ZeroTier 网络'
+    next_step: ''
