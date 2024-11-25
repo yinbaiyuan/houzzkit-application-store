@@ -1,0 +1,45 @@
+name: MaterServer
+version: 1.0.0
+bundle_id: com.home-assistant-libs.python-matter-server.materserver
+app_info: app_info.md
+hos_version: "2024.1.0"
+config_version: 1.0.0
+docker_config:
+    registry_mirrors: registry.cn-hangzhou.aliyuncs.com
+    image_name: houzzkitos/python-matter-server
+    registry_auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqc29uIjoiQythdVFWekptL2lXRSswa245K3hONDJ5Tlk4SFQ3dFdWd1UrYXQ1YTVqRHYvN3djS25zc2pJbnFyemdSVEFZN3czWjBIS25mbHdWakV3b2txUEpWeUE9PSIsInRpbWUiOjE3MjQyMzEzMDh9.jXm8b7Spd3T2xqbzumI3Ha9OG-8pUQP4qWBNHTZWzfE
+    tag: 6.6.0
+    container_name: materserver
+    network_mode: host
+    icon: icon.png
+    ports:
+        - network_protocol: tcp
+          container: "5580"
+          host: "5580"
+    volumes:
+        - container: /data
+          host: /var/data/materserver/data
+        - container: /run/dbus:ro
+          host: /run/dbus 
+    env_variables:
+        - name: TZ
+          value: Asia/Shanghai
+    devices: []
+    command: []
+    privileged_mode: false
+    restart_policy: "unless-stopped"
+    resources_limit: false
+    entrypoint: /bin/bash
+    maximum_cpu_usage: "0"
+    memory_limit: "0"
+    container_hostname: materserver
+hdp_update_info: ""
+init_script: ""
+uninstall: ""
+resource_files: []
+author: houzzkit-team
+author_introduction_url: "https://www.houzzkit.com"
+create_time: "1712907901"
+update_author: ""
+update_author_introduction_url: ""
+hdp_create_time: ""

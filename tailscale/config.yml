@@ -1,0 +1,47 @@
+name: Tailscale
+version: 1.0.0
+bundle_id: com.tailscale.tailscale.tailscale
+app_info: ""
+hos_version: 2024.1.0
+config_version: 1.0.0
+docker_config:
+    registry_mirrors: registry.cn-hangzhou.aliyuncs.com
+    image_name: houzzkitos/tailscale
+    tag: v1.66
+    container_name: tailscale
+    network_mode: host
+    icon: icon.png
+    iconname: icon.png
+    web_ui_port: ""
+    ports: []
+    volumes:
+        - container: /var/lib/tailscale
+          host: /var/data/tailscale
+    env_variables:
+        - name: TS_STATE_DIR
+          value: /var/lib/tailscale
+        - name: TZ
+          value: Asia/Shanghai
+    devices:
+        - host: /dev/net/tun
+          container: /dev/net/tun
+    command: []
+    privileged_mode: true
+    restart_policy: unless-stopped
+    resources_limit: false
+    entrypoint: /bin/sh
+    maximum_cpu_usage: "0"
+    memory_limit: ""
+    container_hostname: tailscale
+    cap_add: []
+    registry_auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqc29uIjoiQythdVFWekptL2lXRSswa245K3hONDJ5Tlk4SFQ3dFdWd1UrYXQ1YTVqRHYvN3djS25zc2pJbnFyemdSVEFZN3czWjBIS25mbHdWakV3b2txUEpWeUE9PSIsInRpbWUiOjE3MjQyMzEzMDh9.jXm8b7Spd3T2xqbzumI3Ha9OG-8pUQP4qWBNHTZWzfE
+hdp_update_info: ""
+init_config: flow_config.yml
+uninstall: ""
+resource_files: []
+author: houzzkit-team
+author_introduction_url: ""
+create_time: ""
+update_author: houzzkitteam
+update_author_introduction_url: https://www.houzzkit.com
+hdp_create_time: "1716976700"

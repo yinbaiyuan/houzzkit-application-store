@@ -1,5 +1,5 @@
 name: Node-RED
-version: 1.0.0
+version: 1.0.1
 bundle_id: com.nodered.node-red.Node-RED
 app_info: app_info.md
 hos_version: "2024.1.0"

@@ -1,12 +1,12 @@
 name: Home Assistant
-version: 1.0.0
+version: 1.0.1
 bundle_id: com.homeassistant.home-assistant.homeassistant
 app_info: app_info.md
 hos_version: 2023.1.4
 config_version: 1.0.0
 docker_config:
     image_name: homeassistant/home-assistant
-    tag: 2023.8.4
+    tag: 2024.5.5
     container_name: Home Assistant
     network_mode: host
     icon: icon.png

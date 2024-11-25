@@ -40,6 +40,8 @@ uninstall: ""
 resource_files:
   - file_type: file
     path: script.sh
+  - file_type: file
+    path: script.py  
 author: houzzkit-team
 author_introduction_url: ""
 create_time: ""
