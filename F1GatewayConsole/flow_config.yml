@@ -1,0 +1,11 @@
+version: 1.0.0
+step_pointer: step1
+steps:
+  step1:
+    step_type: run_shell_script
+    parameters:
+      shell_path: init.sh
+      shell_info: 准备独立私有数据目录
+    next_step: step2
+  step2:
+    step_type: start_container
